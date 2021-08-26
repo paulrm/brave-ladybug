@@ -6,7 +6,7 @@
  */
  exports.helloWorld = (req, res) => {
     console.log("requestHelloSudamerica");
-    let message = req.query.message || req.body.message || 'Hello from Rio!';
-    res.status(200).send(message);
+    console.log(process.env)
+    res.send(`Hello ${escapeHtml(req.query.name || req.body.name || 'World')}!`);
   };
   
