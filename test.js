@@ -18,6 +18,7 @@
 
 const requestListener = function (req, res) {
 
+  //--async request----------------------------
   const http = require('http');
   var options = {
     host: 'ifconfig.me',
@@ -34,6 +35,8 @@ const requestListener = function (req, res) {
       console.log('BODY: ' + chunk);
     });
   }).end();
+  //----------------------------------------
+
   res.writeHead(200);
   res.end('Hello, World!');
 }
