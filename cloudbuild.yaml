@@ -12,3 +12,39 @@ steps:
   - --source=.
   - --trigger-http
   - --allow-unauthenticated
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - helloWorld
+  - --runtime=nodejs14
+  - --security-level=secure-optional
+  - --region=europe-west1
+  - --source=.
+  - --trigger-http
+  - --allow-unauthenticated
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - helloWorld
+  - --runtime=nodejs14
+  - --security-level=secure-optional
+  - --region=asia-northeast2
+  - --source=.
+  - --trigger-http
+  - --allow-unauthenticated
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - helloWorld
+  - --runtime=nodejs14
+  - --security-level=secure-optional
+  - --region=us-central1
+  - --source=.
+  - --trigger-http
+  - --allow-unauthenticated  

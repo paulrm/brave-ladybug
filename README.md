@@ -10,6 +10,12 @@ exports.helloWorld = (req, res) => {
 ```
 - el deploy funciono pero no logre especificar el trigger URL como lo hice manual
 
+- empieza a andar, con algunas limitaciones
+    - en el enviroment aun no hay nada que refiera a la zona
+        - agregar un call a ifconfig.me/ip ⏭️
+
+- 🚧  deploy en mas de una zona
+
 
 # No-Error
 ```

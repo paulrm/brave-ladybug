@@ -5,9 +5,9 @@
  * @param {!express:Response} res HTTP response context.
  */
  exports.helloWorld = (req, res) => {
-    console.log("requestHelloSudamerica");
-    console.log(process.env)
-    let message = req.query.message || req.body.message || 'Hello from Southamerica!';
+    console.log("requestHellocloud");
+    //console.log(process.env)
+    let message = req.query.message || req.body.message || 'Hello from Cloud!';
     res.status(200).send(message);
   };
   
