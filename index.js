@@ -6,8 +6,23 @@
  */
  exports.helloWorld = (req, res) => {
     console.log("requestHellocloud");
-    //console.log(process.env)
-    let message = req.query.message || req.body.message || 'Hello from Cloud!';
-    res.status(200).send(message);
+    const http = require('http');
+    var options = {
+      host: 'ifconfig.me',
+      port: 80,
+      path: '/ip',
+      method: 'GET'
+    };
+  
+    http.request(options, function(resp) {
+      console.log('STATUS: ' + resp.statusCode);
+      console.log('HEADERS: ' + JSON.stringify(resp.headers));
+      resp.setEncoding('utf8');
+      resp.on('data', function (chunk) {
+        console.log('BODY: ' + chunk);
+        res.writeHead(200);
+        res.end('Hello, World! from ' + chunk);
+      });
+    }).end();
   };
   

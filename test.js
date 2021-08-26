@@ -27,11 +27,11 @@ const requestListener = function (req, resq) {
     method: 'GET'
   };
 
-  http.request(options, function(res) {
-    console.log('STATUS: ' + res.statusCode);
-    console.log('HEADERS: ' + JSON.stringify(res.headers));
-    res.setEncoding('utf8');
-    res.on('data', function (chunk) {
+  http.request(options, function(resp) {
+    console.log('STATUS: ' + resp.statusCode);
+    console.log('HEADERS: ' + JSON.stringify(resp.headers));
+    resp.setEncoding('utf8');
+    resp.on('data', function (chunk) {
       console.log('BODY: ' + chunk);
       resq.writeHead(200);
       resq.end('Hello, World!' + chunk);
