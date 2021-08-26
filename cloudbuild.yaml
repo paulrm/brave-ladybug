@@ -6,6 +6,7 @@ steps:
   - functions
   - deploy
   - helloWorld
+  - --runtime=nodejs14
   - --region=southamerica-east1
   - --source=.
   - --trigger-http
