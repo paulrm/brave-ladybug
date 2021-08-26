@@ -10,3 +10,4 @@ steps:
   - --region=southamerica-east1
   - --source=.
   - --trigger-http
+  - --trigger-resource=https://southamerica-east1-brave-ladybug.cloudfunctions.net/hello
