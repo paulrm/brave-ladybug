@@ -16,7 +16,7 @@
 //   });
 // }).end();
 
-const requestListener = function (req, res) {
+const requestListener = function (req, resq) {
 
   //--async request----------------------------
   const http = require('http');
@@ -33,12 +33,13 @@ const requestListener = function (req, res) {
     res.setEncoding('utf8');
     res.on('data', function (chunk) {
       console.log('BODY: ' + chunk);
+      resq.writeHead(200);
+      resq.end('Hello, World!' + chunk);
     });
   }).end();
   //----------------------------------------
 
-  res.writeHead(200);
-  res.end('Hello, World!');
+
 }
 
 const http = require('http');
