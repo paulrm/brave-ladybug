@@ -1,5 +1,15 @@
 # brave-ladybug
 
+# sample code
+```
+exports.helloWorld = (req, res) => {
+  console.log("requestHelloUSCentral");
+  let message = req.query.message || req.body.message || 'Hello from Iowa!';
+  res.status(200).send(message);
+};
+```
+- el deploy funciono pero no logre especificar el trigger URL como lo hice manual
+
 
 # No-Error
 ```
