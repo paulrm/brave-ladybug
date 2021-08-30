@@ -1,5 +1,16 @@
 # brave-ladybug
 
+# 💡 Ideas
+
+- Proceso completo 
+  - copy en cada dir x [proceedor/zona]
+  - deployar
+  - testar
+  - publicar el tiempo requerido
+
+- cloud run
+  - https://cloud.google.com/blog/topics/developers-practitioners/cloud-run-story-serverless-containers
+
 # sample code
 ```
 exports.helloWorld = (req, res) => {
