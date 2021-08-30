@@ -2,6 +2,17 @@
 
 # 💡 Ideas
 
+- Added test postgres
+```
+make up-postgres
+# check postgres up
+make create-def
+make insert-data
+make check-data
+# Clean up
+make down-postgres
+```
+
 - Proceso completo 
   - copy en cada dir x [proceedor/zona]
   - deployar
