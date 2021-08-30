@@ -13,6 +13,8 @@ make check-data
 make down-postgres
 ```
 
+- Added 1er test de conectar node c/Postgres
+
 - Proceso completo 
   - copy en cada dir x [proceedor/zona]
   - deployar
