@@ -2,18 +2,27 @@
 
 # 💡 Ideas
 
-- Added test postgres
+- Completed posgres test
+  - to start
 ```
-make up-postgres
-# check postgres up
-make create-def
-make insert-data
-make check-data
-# Clean up
+make all-up-Process
+```
+  - clean up
+```
 make down-postgres
 ```
 
-- Added 1er test de conectar node c/Postgres
+- Grafana Query
+```
+SELECT
+  UNIX_TIMESTAMP(DATE_FORMAT(ts, '%Y-%m-%d')) as time_sec,
+  metricvalue as value,
+  metricname as metric
+FROM metrics
+WHERE ts > 1 and  $__timeFilter(time_column)
+ORDER BY lastlogin ASC
+```
+
 
 - Proceso completo 
   - copy en cada dir x [proceedor/zona]
