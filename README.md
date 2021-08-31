@@ -1,6 +1,25 @@
 # brave-ladybug
 
+
+# Log
+- [ ] Google Workflow
+- [ ] postgres en la nube
+- [x] pruebas con postgres dockerizado
+- [x] pruebas de Cloud functions en la nube 
+
+
 # 💡 Ideas
+
+
+```
+gcloud sql instances create INSTANCE_NAME \
+--database-version=POSTGRES_12
+--cpu=NUMBER_CPUS \
+--memory=MEMORY_SIZE \
+--region=REGION \
+--gce-zone=GCE_ZONE \
+--zone=ZONE
+```
 
 - Completed posgres test
   - to start
