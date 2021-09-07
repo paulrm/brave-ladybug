@@ -15,9 +15,13 @@ upcloud-postgres:
 	# 	--memory=8192 \
 	# 	--region=us-central \
 	# 	--zone=us-central1-a
-	gcloud sql instances create brave-ladybug-db \
-	--tier=db-f1-micro \
-	--region=us-central	
+	
+	# - creo un mysql 
+	# gcloud sql instances create brave-ladybug-db \
+	# --tier=db-f1-micro \
+	# --region=us-central	
+
+
 lscloud:
 	gcloud sql instances list
 
@@ -57,3 +61,8 @@ all-up-Process:
 	psql postgres://postgres:example@localhost:5432 metric --file=data-dump.sql
 	psql postgres://postgres:example@localhost:5432 metric --command="SELECT * FROM metrics"
 
+deploy-helloGCS:
+	gcloud functions deploy helloGCS \
+	--runtime nodejs14 \
+	--trigger-resource brave-ladybug \
+	--trigger-event google.storage.object.finalize
