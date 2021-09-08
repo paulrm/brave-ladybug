@@ -1,17 +1,19 @@
 # brave-ladybug
 
+## Log
 
-# Log
-- [ ] Google Workflow
-- [ ] postgres en la nube 🎉
+- [x] postgres en la nube 🎉
 - [x] pruebas con postgres dockerizado
 - [x] pruebas de Cloud functions en la nube 
 - [x] 1er cloudfunction disparada desde CloudStorage
+- [ ] orquestar MPV Input 
+  - [ ] cloud verificar mp4 + xml
+  - [ ] post -> Google Workflow
 
 
-# Notas
+## Notas
 
-- 
+- Creacion de la db en la nube
 
 ```
 gcloud sql instances create brave-ladybug-db01 \
@@ -92,7 +94,7 @@ ORDER BY lastlogin ASC
 - cloud run
   - https://cloud.google.com/blog/topics/developers-practitioners/cloud-run-story-serverless-containers
 
-# sample code
+## sample code 
 ```
 exports.helloWorld = (req, res) => {
   console.log("requestHelloUSCentral");
