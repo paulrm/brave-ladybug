@@ -3,13 +3,30 @@
 
 # Log
 - [ ] Google Workflow
-- [ ] postgres en la nube
+- [ ] postgres en la nube 🎉
 - [x] pruebas con postgres dockerizado
 - [x] pruebas de Cloud functions en la nube 
 - [x] 1er cloudfunction disparada desde CloudStorage
 
 
-# 💡 Ideas
+# Notas
+
+- 
+
+```
+gcloud sql instances create brave-ladybug-db01 \
+                --database-version=POSTGRES_12 \
+                --cpu=2 \
+                --memory=8GiB \
+                --zone=us-central1-a \
+                --root-password=password123
+Creating Cloud SQL instance...done.                                                                                                     
+Created [https://sqladmin.googleapis.com/sql/v1beta4/projects/brave-ladybug/instances/brave-ladybug-db01].
+NAME                DATABASE_VERSION  LOCATION       TIER              PRIMARY_ADDRESS  PRIVATE_ADDRESS  STATUS
+brave-ladybug-db01  POSTGRES_12       us-central1-a  db-custom-2-8192  34.135.169.194   -                RUNNABLE
+```
+
+- Deployed cloud function asociada a un storage event
 
 ```
 gcloud functions deploy helloGCS \
@@ -42,16 +59,7 @@ timeout: 60s
 updateTime: '2021-09-07T22:27:32.085Z'
 versionId: '5'
 ```
-## 
-```
-gcloud sql instances create INSTANCE_NAME \
---database-version=POSTGRES_12
---cpu=NUMBER_CPUS \
---memory=MEMORY_SIZE \
---region=REGION \
---gce-zone=GCE_ZONE \
---zone=ZONE
-```
+
 
 - Completed posgres test
   - to start

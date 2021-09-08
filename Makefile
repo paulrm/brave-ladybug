@@ -9,13 +9,29 @@ up-postgres:
 	docker-compose -f stack.yml up -d
 
 upcloud-postgres:
-	# gcloud sql instances create brave-ladybug-db \
-	# 	--database-version=POSTGRES_12 \
-	# 	--cpu=2 \
-	# 	--memory=8192 \
-	# 	--region=us-central \
-	# 	--zone=us-central1-a
-	
+	gcloud sql instances create brave-ladybug-db01 \
+		--database-version=POSTGRES_12 \
+		--cpu=2 \
+		--memory=8GiB \
+		--zone=us-central1-a \
+		--root-password=password123
+
+# gcloud sql instances create prod-instance 
+# --database-version=POSTGRES_9_6 
+# --cpu=2 
+# --memory=8GiB 
+# --zone=us-central1-a 
+# --root-password=password123	
+
+# gcloud sql instances create tf-prod-db 
+# --database-version=POSTGRES_9_6 
+# --cpu=2 --memory=4GB 
+# --region=europe-west3 
+# --gce-zone=europe-west3-a 
+# --backup 
+# --storage-auto-increase
+# 
+
 	# - creo un mysql 
 	# gcloud sql instances create brave-ladybug-db \
 	# --tier=db-f1-micro \
