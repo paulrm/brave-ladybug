@@ -12,6 +12,19 @@
 
 
 ## Notas
+- checking postgres port
+```
+nmap -Pn 34.135.169.194 -p5432
+Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times will be slower.
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-09-08 12:33 -03
+Nmap scan report for 194.169.135.34.bc.googleusercontent.com (34.135.169.194)
+Host is up.
+
+PORT     STATE    SERVICE
+5432/tcp filtered postgresql
+
+Nmap done: 1 IP address (1 host up) scanned in 2.12 seconds
+```
 
 - Creacion de la db en la nube
 

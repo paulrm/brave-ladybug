@@ -16,6 +16,9 @@ upcloud-postgres:
 		--zone=us-central1-a \
 		--root-password=password123
 
+checkcloud-postgres:
+	psql postgres://postgres:example@34.135.169.194:5432/
+
 # gcloud sql instances create prod-instance 
 # --database-version=POSTGRES_9_6 
 # --cpu=2 
