@@ -17,28 +17,7 @@ upcloud-postgres:
 		--root-password=password123
 
 checkcloud-postgres:
-	psql postgres://postgres:example@34.135.169.194:5432/
-
-# gcloud sql instances create prod-instance 
-# --database-version=POSTGRES_9_6 
-# --cpu=2 
-# --memory=8GiB 
-# --zone=us-central1-a 
-# --root-password=password123	
-
-# gcloud sql instances create tf-prod-db 
-# --database-version=POSTGRES_9_6 
-# --cpu=2 --memory=4GB 
-# --region=europe-west3 
-# --gce-zone=europe-west3-a 
-# --backup 
-# --storage-auto-increase
-# 
-
-	# - creo un mysql 
-	# gcloud sql instances create brave-ladybug-db \
-	# --tier=db-f1-micro \
-	# --region=us-central	
+	psql postgres://postgres:password@34.135.169.194:5432/ --command="\conninfo"
 
 
 lscloud:

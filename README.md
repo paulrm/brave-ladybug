@@ -3,6 +3,9 @@
 ## Log
 
 - [x] postgres en la nube 🎉
+  - access desde Home
+    - habiltar red  
+    - resetear el pass del user postgres
 - [x] pruebas con postgres dockerizado
 - [x] pruebas de Cloud functions en la nube 
 - [x] 1er cloudfunction disparada desde CloudStorage
@@ -12,18 +15,25 @@
 
 
 ## Notas
+- checking connection
+```
+psql postgres://postgres:password@34.135.169.194:5432/ --command="\conninfo"
+You are connected to database "postgres" as user "postgres" on host "34.135.169.194" at port "5432".
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+```
+
 - checking postgres port
 ```
 nmap -Pn 34.135.169.194 -p5432
 Host discovery disabled (-Pn). All addresses will be marked 'up' and scan times will be slower.
-Starting Nmap 7.91 ( https://nmap.org ) at 2021-09-08 12:33 -03
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-09-08 13:00 -03
 Nmap scan report for 194.169.135.34.bc.googleusercontent.com (34.135.169.194)
-Host is up.
+Host is up (0.17s latency).
 
-PORT     STATE    SERVICE
-5432/tcp filtered postgresql
+PORT     STATE SERVICE
+5432/tcp open  postgresql
 
-Nmap done: 1 IP address (1 host up) scanned in 2.12 seconds
+Nmap done: 1 IP address (1 host up) scanned in 0.31 seconds
 ```
 
 - Creacion de la db en la nube
