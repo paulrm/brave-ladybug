@@ -6,11 +6,43 @@
 - [ ] postgres en la nube
 - [x] pruebas con postgres dockerizado
 - [x] pruebas de Cloud functions en la nube 
+- [x] 1er cloudfunction disparada desde CloudStorage
 
 
 # 💡 Ideas
 
-
+```
+gcloud functions deploy helloGCS \
+        --entry-point=helloGCS \
+        --source=functions/input \
+        --runtime nodejs14 \
+        --trigger-resource brave-ladybug \
+        --trigger-event google.storage.object.finalize
+Deploying function (may take a while - up to 2 minutes)...⠛                                                                                                                                       
+For Cloud Build Logs, visit: https://console.cloud.google.com/cloud-build/builds;region=us-central1/c444439e-5b9c-4603-be5f-5a721b8a25b1?project=223859610547
+Deploying function (may take a while - up to 2 minutes)...done.                                                                                                                                   
+availableMemoryMb: 256
+buildId: 978d2c14-78ca-41c3-9bb4-411ed74fe4fb
+buildName: projects/223859610547/locations/us-central1/builds/978d2c14-78ca-41c3-9bb4-411ed74fe4fb
+entryPoint: helloGCS
+eventTrigger:
+  eventType: google.storage.object.finalize
+  failurePolicy: {}
+  resource: projects/_/buckets/brave-ladybug
+  service: storage.googleapis.com
+ingressSettings: ALLOW_ALL
+labels:
+  deployment-tool: cli-gcloud
+name: projects/brave-ladybug/locations/us-central1/functions/helloGCS
+runtime: nodejs14
+serviceAccountEmail: brave-ladybug@appspot.gserviceaccount.com
+sourceUploadUrl: https://storage.googleapis.com/gcf-upload-us-central1-80378a99-1f37-43b3-8e9e-388e2f1f034e/8cde99e8-cf43-450f-b220-d5d6eb7ae8e0.zip
+status: ACTIVE
+timeout: 60s
+updateTime: '2021-09-07T22:27:32.085Z'
+versionId: '5'
+```
+## 
 ```
 gcloud sql instances create INSTANCE_NAME \
 --database-version=POSTGRES_12

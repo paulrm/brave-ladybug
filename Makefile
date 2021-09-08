@@ -63,6 +63,8 @@ all-up-Process:
 
 deploy-helloGCS:
 	gcloud functions deploy helloGCS \
+	--entry-point=helloGCS \
+	--source=functions/input \
 	--runtime nodejs14 \
 	--trigger-resource brave-ladybug \
 	--trigger-event google.storage.object.finalize
