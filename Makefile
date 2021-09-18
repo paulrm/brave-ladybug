@@ -82,10 +82,12 @@ web-deploy:
 	--allow-unauthenticated
 
 web-check:
-	curl -X POST https://us-central1-brave-ladybug.cloudfunctions.net/helloHttp -H "Content-Type:application/json"  -d '{"name":"Jane"}'
+	#curl -v -X POST https://us-central1-brave-ladybug.cloudfunctions.net/helloHttp -H "Content-Type:application/json"  -d '{"name":"Jane"}' -w \\ntime_total=%{time_total}\\n \
+	./bin/web-check.sh
 
 web-info:
 	gcloud functions describe helloHttp
 
 web-getlogs:
-	gcloud logging read "resource.type=cloud_function AND resource.labels.function_name=helloHttp AND labels.execution_id=9qg3revtddkb" --project brave-ladybug --limit 10
+	#gcloud logging read "resource.type=cloud_function AND resource.labels.function_name=helloHttp AND labels.execution_id=9qg3revtddkb" --project brave-ladybug --limit 10
+	./bin/web-getlogs.sh
