@@ -8,9 +8,9 @@
     console.log("requestHellocloud");
     const http = require('http');
     var options = {
-      host: 'ifconfig.me',
+      host: 'us-central1-brave-ladybug.cloudfunctions.net',
       port: 80,
-      path: '/ip',
+      path: '/helloHttp',
       method: 'GET'
     };
   

@@ -1,5 +1,9 @@
 # brave-ladybug / Sandbox para pruebas con GPC
 
+## En commit (y push) en main
+- Ejecuta -> cloudbuild.yaml
+  - deploy helloWorld (declarado en ./index.js)
+
 ## Log
 - [x] postgres en la nube 🎉
   - access desde Home
