@@ -22,7 +22,7 @@
       }
     };
   
-    http.request(options, function(resp) {
+    https.request(options, function(resp) {
       console.log('STATUS: ' + resp.statusCode);
       console.log('HEADERS: ' + JSON.stringify(resp.headers));
       resp.setEncoding('utf8');
