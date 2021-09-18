@@ -1,4 +1,17 @@
+const {GoogleAuth} = require('google-auth-library');
+const targetAudience = "cloud-function-url"
+
+async function run() {
+	const auth = new GoogleAuth();
+
+	const client = await auth.getIdTokenClient(targetAudience);
+	const res = await client.request({ url });
+	console.info(res.data);
+}
+
 exports.helloHttp = (req, res) => {
+
+    run();
 
     var name = "";
     if(req.query.name)
