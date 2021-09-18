@@ -76,6 +76,8 @@ web-deploy:
 	--entry-point=helloHttp \
 	--source=functions/web \
 	--runtime nodejs14 \
+	--memory=128MB \
+	--security-level=secure-always \
 	--trigger-http \
 	--allow-unauthenticated
 

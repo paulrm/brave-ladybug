@@ -13,6 +13,10 @@
   - [ ] post -> Google Workflow
 - [ ] pruebas de cloudFunction con Authentication 🚧
   - [x] prueba basica
+      - [x] get ip and geo location 
     - make web-deploy
     - make web-check
     - make web-info
+  - [ ] Mejora
+    - tomar la data gcloud functions describe helloHttp 
+    - construir el proximo con esa data (ej: versionId + 1  )
