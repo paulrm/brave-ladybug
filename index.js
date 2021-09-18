@@ -26,7 +26,9 @@
       console.log(`statusCode: ${res.statusCode}`)
     
       res.on('data', d => {
-        process.stdout.write(d)
+        //process.stdout.write(d)
+            res.writeHead(200);
+          res.end('Hello, World!', d );
       })
     })
     
@@ -37,8 +39,8 @@
     req.write(data)
     req.end()
   
-    res.writeHead(200);
-    res.end('Hello, World!');
+    // res.writeHead(200);
+    // res.end('Hello, World!');
 
 
     // https.request(options, function(resp) {
