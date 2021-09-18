@@ -6,12 +6,20 @@
  */
  exports.helloWorld = (req, res) => {
     console.log("requestHellocloud");
-    const http = require('http');
+    const https = require('https');
+    const data = JSON.stringify({
+      name: 'Jane'
+    })
+
     var options = {
       host: 'us-central1-brave-ladybug.cloudfunctions.net',
       port: 80,
       path: '/helloHttp',
-      method: 'GET'
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': data.length
+      }
     };
   
     http.request(options, function(resp) {
