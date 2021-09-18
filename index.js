@@ -13,7 +13,7 @@
 
     var options = {
       host: 'us-central1-brave-ladybug.cloudfunctions.net',
-      port: 80,
+      port: 443,
       path: '/helloHttp',
       method: 'POST',
       headers: {

@@ -1,8 +1,7 @@
 {
-    "name": "sample-http",
+    "name": "hello-world",
     "version": "0.0.1",
     "dependencies": {
-        "http": "^0.0.1-security",
         "https": "^1.0.0"
     }
 }
