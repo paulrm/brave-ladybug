@@ -66,3 +66,21 @@ deploy-helloGCS:
 	--runtime nodejs14 \
 	--trigger-resource brave-ladybug \
 	--trigger-event google.storage.object.finalize
+
+setProject:
+	 gcloud auth login paul.messina@gmail.com
+	 gcloud config set project brave-ldaybug
+
+web-deploy:
+	gcloud functions deploy helloHttp \
+	--entry-point=helloHttp \
+	--source=functions/web \
+	--runtime nodejs14 \
+	--trigger-http \
+	--allow-unauthenticated
+
+web-check:
+	curl -X POST https://us-central1-brave-ladybug.cloudfunctions.net/helloHttp -H "Content-Type:application/json"  -d '{"name":"Jane"}'
+
+web-info:
+	gcloud functions describe helloHttp

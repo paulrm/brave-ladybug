@@ -12,4 +12,7 @@
   - [ ] cloud verificar mp4 + xml
   - [ ] post -> Google Workflow
 - [ ] pruebas de cloudFunction con Authentication 🚧
-
+  - [x] prueba basica
+    - make web-deploy
+    - make web-check
+    - make web-info
