@@ -86,3 +86,6 @@ web-check:
 
 web-info:
 	gcloud functions describe helloHttp
+
+web-getlogs:
+	gcloud logging read "resource.type=cloud_function AND resource.labels.function_name=helloHttp AND labels.execution_id=9qg3revtddkb" --project brave-ladybug --limit 10
