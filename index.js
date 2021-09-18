@@ -12,25 +12,40 @@
     })
 
     var options = {
-      host: 'us-central1-brave-ladybug.cloudfunctions.net',
+      hostname: 'us-central1-brave-ladybug.cloudfunctions.net',
+      port: 443,
       path: '/helloHttp',
-      method: 'GET'
-      // ,
-      // headers: {
-      //   'Content-Type': 'application/json',
-      //   'Content-Length': data.length
-      // }
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': data.length
+      }
     };
+
+    const req = https.request(options, res => {
+      console.log(`statusCode: ${res.statusCode}`)
+    
+      res.on('data', d => {
+        process.stdout.write(d)
+      })
+    })
+    
+    req.on('error', error => {
+      console.error(error)
+    })
+    
+    req.write(data)
+    req.end()
   
-    https.request(options, function(resp) {
-      console.log('STATUS: ' + resp.statusCode);
-      console.log('HEADERS: ' + JSON.stringify(resp.headers));
-      resp.setEncoding('utf8');
-      resp.on('data', function (chunk) {
-        console.log('BODY: ' + chunk);
-        res.writeHead(200);
-        res.end('Hello, World! from ' + chunk);
-      });
-    }).end();
+    // https.request(options, function(resp) {
+    //   console.log('STATUS: ' + resp.statusCode);
+    //   console.log('HEADERS: ' + JSON.stringify(resp.headers));
+    //   resp.setEncoding('utf8');
+    //   resp.on('data', function (chunk) {
+    //     console.log('BODY: ' + chunk);
+    //     res.writeHead(200);
+    //     res.end('Hello, World! from ' + chunk);
+    //   });
+    // }).end();
   };
   

@@ -49,8 +49,8 @@ exports.helloHttp = (req, res) => {
     var functionExecutionId = req.headers['function-execution-id'] || "Unknow";
 
 
-    console.log('helloHttp req=', JSON.stringify(req.headers));
+    //console.log('helloHttp req=', JSON.stringify(req.headers));
     console.log(`helloHttp name=${name} functionExecutionId=${functionExecutionId} host=${host} ip=${ip} agent=${agent} appengineCity=${appengineCity} appengineCitylatlong=${appengineCitylatlong} appengineCountry=${appengineCountry}`);
-    res.send(`Hello ${name} /           functionExecutionId=${functionExecutionId} host=${host} ip=${ip} agent=${agent} appengineCity=${appengineCity} appengineCitylatlong=${appengineCitylatlong} appengineCountry=${appengineCountry}`);;
+    res.send(`Hello ${name} / functionExecutionId=${functionExecutionId} host=${host} ip=${ip} agent=${agent} appengineCity=${appengineCity} appengineCitylatlong=${appengineCitylatlong} appengineCountry=${appengineCountry}`);;
 
 };
