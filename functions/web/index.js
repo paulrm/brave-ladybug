@@ -1,35 +1,35 @@
-const {GoogleAuth} = require('google-auth-library');
-const targetAudience = "cloud-function-url"
+// const {GoogleAuth} = require('google-auth-library');
+// const targetAudience = "cloud-function-url"
 
 
 
 exports.helloHttp = (req, res) => {
 
-    console.info("helloHttp / Start");
+    // console.info("helloHttp / Start");
 
-     async () => { 
+    //  async () => { 
 
-    console.info("run / Start");
+    // console.info("run / Start");
     
-    const url = 'https://us-central1-brave-ladybug.cloudfunctions.net/helloHttp';
-    let targetAudience = 'unauthenticated';
+    // const url = 'https://us-central1-brave-ladybug.cloudfunctions.net/helloHttp';
+    // let targetAudience = 'unauthenticated';
 
-    if (!targetAudience) {
-        // Use the request URL hostname as the target audience for requests.
-        const {URL} = require('url');
-        targetAudience = new URL(url);
-      }
-
-
+    // if (!targetAudience) {
+    //     // Use the request URL hostname as the target audience for requests.
+    //     const {URL} = require('url');
+    //     targetAudience = new URL(url);
+    //   }
 
 
-	const auth = new GoogleAuth();
 
-	const client = await auth.getIdTokenClient(targetAudience);
-	const res = await client.request({ url });
-	console.info(res.data);
-    console.info("run / End");
-    }
+
+	// const auth = new GoogleAuth();
+
+	// const client = await auth.getIdTokenClient(targetAudience);
+	// const res = await client.request({ url });
+	// console.info(res.data);
+    // console.info("run / End");
+    // }
 
     var name = "";
     if(req.query.name)

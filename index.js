@@ -13,13 +13,13 @@
 
     var options = {
       host: 'us-central1-brave-ladybug.cloudfunctions.net',
-      port: 443,
       path: '/helloHttp',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Content-Length': data.length
-      }
+      method: 'GET'
+      // ,
+      // headers: {
+      //   'Content-Type': 'application/json',
+      //   'Content-Length': data.length
+      // }
     };
   
     https.request(options, function(resp) {

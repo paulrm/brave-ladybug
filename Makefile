@@ -69,7 +69,7 @@ deploy-helloGCS:
 
 setProject:
 	 gcloud auth login paul.messina@gmail.com
-	 gcloud config set project brave-ldaybug
+	 gcloud config set project brave-ladybug
 
 web-deploy:
 	gcloud functions deploy helloHttp \
