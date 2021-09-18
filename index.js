@@ -4,7 +4,7 @@
  * @param {!express:Request} req HTTP request context.
  * @param {!express:Response} res HTTP response context.
  */
- exports.helloWorld = (req, res) => {
+ exports.helloWorld = (reqS, res) => {
     console.log("requestHellocloud");
     const https = require('https');
     const data = JSON.stringify({
@@ -37,6 +37,10 @@
     req.write(data)
     req.end()
   
+    res.writeHead(200);
+    res.end('Hello, World!');
+
+
     // https.request(options, function(resp) {
     //   console.log('STATUS: ' + resp.statusCode);
     //   console.log('HEADERS: ' + JSON.stringify(resp.headers));

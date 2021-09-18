@@ -72,11 +72,13 @@ setProject:
 	 gcloud config set project brave-ladybug
 
 web-deploy:
-	gcloud functions deploy helloHttp \
+	gcloud beta functions deploy helloHttp \
 	--entry-point=helloHttp \
 	--source=functions/web \
 	--runtime nodejs14 \
-	--memory=128MB \
+	--memory=256MB \
+	--min-instances=2 \
+	--max-instances=5 \
 	--security-level=secure-always \
 	--trigger-http \
 	--allow-unauthenticated
