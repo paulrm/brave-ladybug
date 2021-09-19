@@ -4,6 +4,15 @@
 - Ejecuta -> cloudbuild.yaml
   - deploy helloWorld (declarado en ./index.js)
 
+## Actual Objective 🚧 
+- helloWorld (en varias areas)
+  - https://southamerica-east1-brave-ladybug.cloudfunctions.net/helloWorld
+  - https://europe-west1-brave-ladybug.cloudfunctions.net/helloWorld
+  - https://asia-northeast2-brave-ladybug.cloudfunctions.net/helloWorld
+  - https://us-central1-brave-ladybug.cloudfunctions.net/helloWorld
+  - llama a nodo central https://us-central1-brave-ladybug.cloudfunctions.net/helloHttp
+    - `Error: could not handle the request`
+
 ## Log
 - [x] postgres en la nube 🎉
   - access desde Home
