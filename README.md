@@ -41,3 +41,6 @@
   - [ ] orquestar MPV Input 
     - [ ] cloud verificar mp4 + xml
     - [ ] post -> Google Workflow
+
+## Next Steps
+- 2022-03-19 restart project
